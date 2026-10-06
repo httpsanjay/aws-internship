@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "StaticAssetObjectStoreAccess",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::production-app-static-assets",
+        "arn:aws:s3:::production-app-static-assets/*"
+      ]
+    },
+    {
+      "Sid": "DiagnosticReadPerformanceMonitoring",
+      "Effect": "Allow",
+      "Action": [
+        "cloudwatch:GetMetricData",
+        "cloudwatch:GetMetricStatistics",
+        "cloudwatch:ListMetrics"
+      ],
+      "Resource": "arn:aws:cloudwatch:us-east-1:123456789012:metric/*"
+    }
+  ]
+}

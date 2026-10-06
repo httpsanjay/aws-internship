@@ -1,0 +1,28 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ManagedDatabaseLifecycle",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBInstance",
+        "rds:DeleteDBInstance",
+        "rds:ModifyDBInstance",
+        "rds:StartDBInstance",
+        "rds:StopDBInstance",
+        "rds:RebootDBInstance"
+      ],
+      "Resource": "arn:aws:ec2:us-east-1:123456789012:db:production-postgres-db"
+    },
+    {
+      "Sid": "DatabaseBackupManagement",
+      "Effect": "Allow",
+      "Action": [
+        "rds:CreateDBSnapshot",
+        "rds:DeleteDBSnapshot",
+        "rds:ModifyDBSnapshotAttribute"
+      ],
+      "Resource": "arn:aws:ec2:us-east-1:123456789012:snapshot:production-snapshot-*"
+    }
+  ]
+}
